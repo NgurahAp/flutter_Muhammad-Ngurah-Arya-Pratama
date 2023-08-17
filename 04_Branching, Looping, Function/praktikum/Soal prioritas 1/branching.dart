@@ -1,6 +1,5 @@
 void main(List<String> args) {
 
-// SOAL Branching
   var nilai = 90;
 
   if (nilai > 70) {
@@ -12,9 +11,4 @@ void main(List<String> args) {
   } else {
     print("Kosong");
   }  
-
-  // SOAL Looping
-  for (var i = 1; i < 11; i++) {
-    print(i);
-  }
 }
