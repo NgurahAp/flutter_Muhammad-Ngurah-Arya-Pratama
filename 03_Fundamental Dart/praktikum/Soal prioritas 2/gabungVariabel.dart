@@ -1,9 +1,12 @@
-void main() {
+String gabung(String a, String b, String c) {
+  return a + b + c;
+}
 
-  String name = 'Hi! Nama ';
-  String me = 'saya ';
-  String arya = 'Arya.\n';
+void main(List<String> args) {
+  String kata1 = 'Hi! ';
+  String kata2 = 'Nama saya ';
+  String kata3 = 'Ngurah.';
 
-  print(name + me + arya);
-
+  var hasil = gabung(kata1, kata2, kata3);
+  print(hasil);
 }

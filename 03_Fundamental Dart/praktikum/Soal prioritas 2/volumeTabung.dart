@@ -1,14 +1,15 @@
-void main() {
+double volume(double p, double r, double t) {
+  return p * r * r * t;
+}
 
+void main(List<String> args) {
   double phi = 3.14;
-  double r = 10;
-  double t = 20;
+  double jariJari = 10;
+  double tinggi = 5;
 
-  double volume = phi * r * r * t;
-
+  double hasil = volume(phi, jariJari, tinggi);
   print('Diketahui :');
-  print('Jari-jari tabung = $r');
-  print('Tinggi tabung = $t');
-  print('Maka volumedari tabung tersebut adalah $volume');
-
+  print('Jari-jari tabung = $jariJari');
+  print('Tinggi tabung = $tinggi');
+  print('Maka volume dari tabung tersebut adalah $hasil');
 }

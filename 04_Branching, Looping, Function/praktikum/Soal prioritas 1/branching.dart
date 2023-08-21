@@ -1,6 +1,6 @@
 void main(List<String> args) {
 
-  var nilai = 90;
+  int nilai = 90;
 
   if (nilai > 70) {
     print('Nilai A');
