@@ -5,7 +5,7 @@ String input(String a) {
 }
 
 void main(List<String> args) {
-  String original1 = 'kasurrusak';
+  // String original1 = 'kasurrusak';
   String original2 = 'mobilbalap';
 
   String reversed = input(original2);
@@ -14,4 +14,5 @@ void main(List<String> args) {
   } else {
     print('Bukan palindrom');
   }
+  
 }
