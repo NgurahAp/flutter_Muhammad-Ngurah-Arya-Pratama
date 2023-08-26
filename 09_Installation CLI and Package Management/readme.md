@@ -1,0 +1,5 @@
+# COMMAND LINE TOOLS AND PACKAGE MANAGEMENT
+
+- Flutter CLI adalah alat yang digunakan untuk berinteraksi dengan SKD dan terbentuk dari perintah yang dijalankan didalam terminal. Beberapa perintah CLI yang berguna diantaranya flutter doctor, flutter create, flutter run, flutter emulator, flutter channel, flutter pub, flutter build dan flutter clean.
+- Package management berguna untuk mempercepat pengembangan aplikasi karena tidak perlu membuat semuanya dari ulang. Package dibuat oleh developer lain dan kita dapa mengaksesnya melewati website pub.dev
+- caranya adalah ketika kita sudah menemukan package yang akan kita gunakan di web, copy baris dependency yang ada di bagian installing dan paste di file pubspec.yaml kalian. Run flutter pub get di terminal dan di file dart yang akan kita gunakan, import packagenya. Apabila tidak berhasil, bisa reset aplikasi flutter kita.
