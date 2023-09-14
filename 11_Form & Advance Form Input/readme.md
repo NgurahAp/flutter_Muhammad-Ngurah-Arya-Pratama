@@ -2,8 +2,8 @@
 
 ## Form
 
-- Menerima isian data dari pengguna dan isian dapat lebih dari 
-- Cara membuatnya yaitu menggunakan StatefullWidget, Keadaan form disimpan menggunakan GlobalKey<FormState>
+> Menerima isian data dari pengguna dan isian dapat lebih dari
+> Cara membuatnya yaitu menggunakan StatefullWidget, Keadaan form disimpan menggunakan GlobalKey<FormState>
 
 ```
 var formKey = GlobalKey<FormState>();
@@ -17,8 +17,10 @@ Form(
 ## Input
 
 ### TextField
-- Menerima isian data dari pengguna 
+
+- Menerima isian data dari pengguna
 - Cara membuatnya yaitu dengan membuat property baru yang berisi TextEditingController();
+
 ```
 var inputController = TextEditingController();
 
@@ -26,9 +28,12 @@ TextField(
   controller: inputController,
 )
 ```
+
 ### Radio
+
 - Memberi opsi kepada pengguna, dan hanya memilih 1 opsi
 - Data diambil menggunakan property dengan tipe data sesuai value pada radio
+
 ```
 var radioValue = '';
 
@@ -42,8 +47,11 @@ Radio<String>(
   },
 );
 ```
+
 ### Checkbox
+
 - sama seperti radio, tetapi pengguna dapat memilih beberapa opsi. Data diambil menggunakan property bertipe bool
+
 ```
 var checkValue = false;
 
@@ -57,5 +65,150 @@ Checkbox(
 );
 ```
 
+### DropdownButton
 
+- Hanya dapat memilih 1 opsi. Opsi tidak ditampilkan di awal, hanya tampil jika ditekan.
+- Data diambil menggunakan property dengan tipe data sesuai value oada menu item
 
+```
+var dropdownValue = 0;
+
+DropdownButton(
+  value: dropdownValue,
+  onChanged: (int? value) {
+    setState(() {
+      dropdownValue = value ?? 0;
+    });
+  },
+  items: const [
+    DropdownMenuItem(
+      value 0,
+      child: Text('Pilih ...'),
+    ),
+    DropdownMenuItem(
+      value 1,
+      child: Text('Laki-laki'),
+    ),
+    DropdownMenuItem(
+      value 2,
+      child: Text('Perempuan'),
+    ),
+  ],
+);
+```
+
+## Button
+
+> Bersifat seperti tombol dan dapat melakukan sesuatu saat ditekan
+
+### ElevatedButton
+
+- Tombol yang timbul dan akan menjalankan onPressed jika ditekan.
+
+```
+ElevatedButton(
+  child: const Text('Submit'),
+  onPressed: () {
+    // lakukan sesuatu
+  },
+);
+```
+
+### IconButton
+
+- Perbedaan dengan ElevatedButton yaitu hanya menampilkan icon.
+
+```
+IconButton(
+  icon: const Icon(Icons.add),
+  onPressed: () {
+    // lakukan sesuatu
+  },
+);
+```
+
+# Advance Form Input
+
+## Interractive Widgets
+
+> Interaksi antara aplikasi dan user.
+> Mengumpulkan input dan feedback dari user.
+
+### Date Picker
+
+- Widget dimana user bisa memasukan tanggal
+- Menggunakan fungsi bawaan flutter showDatePicker yang memiliki tipe data future
+  **- Cara membuat: **
+
+1. Menambahkan packages intl di file pubspec.yaml
+2. Mempersiapkan variabel
+
+```
+DateTime _dueDate = DateTime.now();
+final currentDate = DateTime.now();
+```
+
+3. Membangun UI
+
+```
+ Widget buildDatePicker(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Date'),
+            TextButton(
+              onPressed: ()  {
+
+              },
+              child: const Text('Select'),
+            )
+          ],
+        ),
+        Text(
+          DateFormat('dd-MM-yyyy').format(_dueDate),
+        )
+      ],
+    );
+  }
+```
+
+4. Menambah fungsi showDatePicker di dalam onPressed
+
+```
+onPressed: () async {
+  final selectDate = await showDatePicker(
+    context: context,
+    initialDate: currentDate,
+    firstDate: DateTime(1990),
+    lastDate: DateTime(currentDate.year + 5),
+  );
+  setState(() {
+    if (selectDate != null) {
+      _dueDate = selectDate
+    }
+  })
+}
+```
+
+4. Saat select button di tekan akan muncul dialog date picker dan tanggal yang ada di UI akan berubah sesuai dengan tanggal yang dipilih
+
+### Color Picker
+
+- Digunakan untuk pemilihan warna dan bisa digunakan untuk berbagai macam kondisi
+  **- Cara membuat: **
+
+1. Menambah package flutter_collorpicker di pubspec.yaml
+2. Mempersiapkan variabel
+
+```
+Color _currentColor = Colors.orange;
+```
+
+3. Membangun UI
+
+```
+widget
+```
