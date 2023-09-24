@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_form/components/image_dialog.dart';
 import 'package:task_form/screens/contact_page.dart';
-import 'package:task_form/screens/image_view.dart';
 
 class GalleryPage extends StatelessWidget {
   const GalleryPage({
@@ -85,67 +85,13 @@ class GalleryPage extends StatelessWidget {
     return InkWell(
       onTap: () {
         showModalBottomSheet(
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(20),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(20),
+              ),
             ),
-          ),
-          context: context,
-          builder: (BuildContext context) {
-            return Padding(
-              padding: const EdgeInsets.only(
-                top: 70,
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    width: 200,
-                    height: 200,
-                    child: Image.network(imageUrl),
-                  ),
-                  const SizedBox(height: 20),
-                  const Text('Apakah anda ingin melihat gambar ini secara full?'),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  ImageViewerPage(imageUrl: imageUrl),
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          backgroundColor: const Color(0xFF6750A4),
-                        ),
-                        child: const Text('Yes'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          backgroundColor: const Color(0xFF6750A4),
-                        ),
-                        child: const Text('No'),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            );
-          },
-        );
+            context: context,
+            builder: (context) => ImageDialogBottomSheet(imageUrl: imageUrl));
       },
       child: Container(
         padding: const EdgeInsets.all(8),
