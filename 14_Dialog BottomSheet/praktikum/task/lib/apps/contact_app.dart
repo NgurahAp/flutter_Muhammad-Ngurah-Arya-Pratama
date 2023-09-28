@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_form/screens/contact_screen.dart';
+import 'package:task_form/screens/galerry_screen.dart';
+import 'package:task_form/screens/image_view.dart';
 
 class ContactApp extends StatelessWidget {
   const ContactApp({super.key});
@@ -9,7 +11,12 @@ class ContactApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'roboto'),
-      home: const ContactScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (_) => const ContactScreen(),
+        '/about': (_) => const GalleryScreen(),
+        '/image_view': (_) => const ImageViewerScreen(),
+      },
     );
   }
 }

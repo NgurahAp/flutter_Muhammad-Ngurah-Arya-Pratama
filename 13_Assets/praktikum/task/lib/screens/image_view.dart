@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:task_form/components/drawer.dart';
 
 class ImageViewerScreen extends StatelessWidget {
-  final String imageUrl;
+
   const ImageViewerScreen({
     super.key,
-    required this.imageUrl,
+  
   });
 
   @override
   Widget build(BuildContext context) {
+    final parameter = ModalRoute.of(context)!.settings.arguments as String;
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: _scaffoldKey,
@@ -31,7 +32,7 @@ class ImageViewerScreen extends StatelessWidget {
       ),
       drawer: const DrawerCostum(),
       body: Center(
-        child: Image.network(imageUrl),
+        child: Image.network(parameter),
       ),
     );
   }

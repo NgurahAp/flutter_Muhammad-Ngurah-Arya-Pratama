@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_form/screens/contact_screen.dart';
-import 'package:task_form/screens/galerry_screen.dart';
+
 
 class DrawerCostum extends StatelessWidget {
   const DrawerCostum({super.key});
@@ -20,12 +19,7 @@ class DrawerCostum extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ContactScreen(),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/');
               },
             ),
             ListTile(
@@ -35,12 +29,7 @@ class DrawerCostum extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const GalleryScreen(),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/about');
               },
             ),
           ],

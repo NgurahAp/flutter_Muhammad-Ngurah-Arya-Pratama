@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task_form/screens/image_view.dart';
 
 class ImageDialogBottomSheet extends StatelessWidget {
   final String imageUrl;
@@ -10,7 +9,7 @@ class ImageDialogBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.only(
         top: 70,
       ),
@@ -29,12 +28,8 @@ class ImageDialogBottomSheet extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ImageViewerScreen(imageUrl: imageUrl),
-                    ),
-                  );
+                  Navigator.of(context)
+                      .pushNamed('/image_view', arguments: imageUrl);
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
