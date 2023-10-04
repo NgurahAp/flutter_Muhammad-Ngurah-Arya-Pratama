@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_form/ui/widgets/drawer.dart';
+import 'package:task_form/view/widgets/drawer.dart';
 
 class ImageViewerScreen extends StatelessWidget {
   const ImageViewerScreen({

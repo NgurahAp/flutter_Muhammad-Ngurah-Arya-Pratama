@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_form/models/contact_model.dart';
-import 'package:task_form/stores/contact_event.dart';
-import 'package:task_form/stores/contact_state.dart';
+import 'package:task_form/view_model/contact_event.dart';
+import 'package:task_form/view_model/contact_state.dart';
 
 class ContactBloc extends Bloc<ContactEvent, ContactState> {
   ContactBloc() : super(const ContactState([])) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_form/ui/widgets/drawer.dart';
-import 'package:task_form/ui/widgets/image_dialog.dart';
+import 'package:task_form/view/widgets/drawer.dart';
+import 'package:task_form/view/widgets/image_dialog.dart';
 
 class GalleryScreen extends StatelessWidget {
   const GalleryScreen({
