@@ -1,0 +1,3 @@
+USER : She no went to the market
+
+ASSISTANT : She did not go to the market
